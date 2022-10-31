@@ -1,30 +1,24 @@
-import {Button, Typography} from "@mui/material"
-import { Add, Settings } from "@mui/icons-material";
+import Sidebar from "./components/Sidebar";
+import Rightbar from "./components/Rightbar";
+import Feed from "./components/Feed";
+import { Box, Stack } from "@mui/material";
+import Navbar from "./components/Navbar";
 
-function App() {
-  return (
-  <div>
-    <Button variant="text" color="secondary">Text</Button>
-    <Button variant="contained" startIcon={<Settings/>} color="secondary">SETTINGS</Button>
-    <Button variant="contained" startIcon={<Add/>} color="success">ADD NEW POST</Button>
-    
+const App=():JSX.Element=>{
 
-    <Typography variant="h1" component="p">Playing with typography</Typography>
-    <Button variant="contained" sx={{
-      backgroundColor:'skyblue',
-      color:'#888',
-      margin:5,
-      "&:hover":{
-        backgroundColor:"lightblue"//catching dynamic states of UI
-      }
+  
+  return(
+    <Box>
+      {/*we should be adding a navBar here */}
+      <Navbar/>
+       <Stack direction="row" spacing={2} justifyContent="space-between">
+          <Sidebar/>
+          <Feed/>
+          <Rightbar/>
+       </Stack>
       
-    }}>My unique Button</Button>
-  </div>
-
-
-    
-  );
-}
+    </Box>
+  )}
 
 export default App;
  
